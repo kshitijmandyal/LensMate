@@ -1,0 +1,12 @@
+src/
+├── components/
+│   ├── UploadZone.tsx     # Drag-and-drop image upload
+│   ├── ImagePreview.tsx   # Show uploaded image
+│   ├── FeedbackPanel.tsx  # Display AI critique
+│   └── LoadingSpinner.tsx # For API calls
+├── hooks/
+│   └── useImageAnalysis.ts # Custom hook for AI API
+├── pages/
+│   └── Home.tsx           # Main page
+└── services/
+    └── api.ts             # Backend API calls
