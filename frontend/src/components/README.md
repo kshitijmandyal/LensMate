@@ -25,6 +25,19 @@ You should see:
 Local: http://localhost:5173/
 
 
+for reset from github:
 
+git fetch origin
+git reset --hard origin/main
 
-npm run storybook
+for github push:
+
+git add .
+git commit -m "Your commit message"
+git push origin main
+
+force push:
+
+git add .
+git commit -m "Your commit message"
+git push origin main --force
