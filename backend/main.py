@@ -33,8 +33,9 @@ async def health_check():
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",                # for local dev
-        "https://lensmate.vercel.app/"      # for production frontend
+        "http://localhost:5173",
+        "https://lensmate.vercel.app",
+        "https://lensmate-r5lk9gwkc-kshitijs-projects-397591b4.vercel.app"  # <-- Add this!
     ],
     allow_credentials=True,
     allow_methods=["*"],
