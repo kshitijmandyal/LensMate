@@ -1,6 +1,6 @@
 import os
 from fastapi import FastAPI, UploadFile, HTTPException, File
-from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List
 import google.generativeai as genai
@@ -35,8 +35,8 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "https://lensmate.vercel.app",
-        "https://lensmate-r5lk9gwkc-kshitijs-projects-397591b4.vercel.app"  # <-- Add this!
     ],
+    allow_origin_regex=r"https://lensmate-[a-z0-9\-]+\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
