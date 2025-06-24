@@ -26,9 +26,16 @@ class AnalysisResponse(BaseModel):
 
 app = FastAPI()
 
+@app.get("/")
+async def health_check():
+    return {"status": "OK", "message": "LensMate API is running"}
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Vite default
+    allow_origins=[
+        "http://localhost:5173",                # for local dev
+        "https://lensmate.vercel.app/"      # for production frontend
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
